@@ -1,0 +1,218 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Korean Music Context Studio</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <aside class="sidebar">
+      <div class="brand">
+        <div class="mark">KM</div>
+        <div>
+          <h1>Korean Music Context Studio</h1>
+          <p>Pre-production dashboard for context-first Korean music reels</p>
+        </div>
+      </div>
+
+      <nav class="nav">
+        <a href="#projects" class="active">Projects</a>
+        <a href="#brief">Brief</a>
+        <a href="#workflow">Workflow</a>
+        <a href="#script">Script</a>
+        <a href="#sources">Sources</a>
+        <a href="#package">OpenCut Package</a>
+      </nav>
+
+      <div class="status">
+        <span class="dot"></span>
+        Local Mac mini workspace
+      </div>
+    </aside>
+
+    <main>
+      <header class="topbar">
+        <div>
+          <p class="eyebrow">Current Project</p>
+          <h2 id="currentTitle">Select a project</h2>
+        </div>
+        <div class="actions">
+          <button id="newProjectButton" type="button">New Project</button>
+          <button id="copyPackageButton" type="button">Copy JSON</button>
+          <button class="primary" id="saveProjectButton" type="button">Save</button>
+        </div>
+      </header>
+
+      <section id="projects" class="band project-shell">
+        <div class="panel project-list-panel">
+          <div class="section-heading">
+            <p class="eyebrow">Project Library</p>
+            <h3>곡별 제작 보드</h3>
+          </div>
+          <div id="projectList" class="project-list"></div>
+        </div>
+
+        <div class="panel new-project-panel">
+          <div class="section-heading">
+            <p class="eyebrow">Create</p>
+            <h3>새 아티스트/프로듀서 추가</h3>
+          </div>
+          <form id="newProjectForm" class="compact-form">
+            <label>
+              Song title
+              <input id="newSongTitle" required placeholder="예: Supernova" />
+            </label>
+            <label>
+              Artist
+              <input id="newArtist" required placeholder="예: aespa" />
+            </label>
+            <label>
+              Producer / songwriter
+              <input id="newProducer" placeholder="예: producer, songwriter, arranger" />
+            </label>
+            <button class="primary full" type="submit">Create Project</button>
+          </form>
+        </div>
+      </section>
+
+      <section id="brief" class="band split">
+        <div class="panel">
+          <div class="section-heading">
+            <p class="eyebrow">Song Brief</p>
+            <h3>곡과 맥락</h3>
+          </div>
+          <form class="brief-form" id="briefForm">
+            <div class="form-grid">
+              <label>
+                Project title
+                <input data-field="projectTitle" />
+              </label>
+              <label>
+                Export status
+                <select data-field="exportStatus">
+                  <option>Idea</option>
+                  <option>Researching</option>
+                  <option>Scripting</option>
+                  <option>Ready for OpenCut</option>
+                  <option>Rendered</option>
+                  <option>Published</option>
+                </select>
+              </label>
+              <label>
+                Artist
+                <input data-field="artist" />
+              </label>
+              <label>
+                Producer
+                <input data-field="producer" />
+              </label>
+              <label>
+                Song title
+                <input data-field="songTitle" />
+              </label>
+              <label>
+                Audience
+                <input data-field="audience" />
+              </label>
+            </div>
+            <label>
+              Core context
+              <textarea data-field="coreContext"></textarea>
+            </label>
+            <label>
+              Video / audio source notes
+              <textarea data-field="videoSource"></textarea>
+            </label>
+          </form>
+        </div>
+
+        <div class="preview">
+          <div class="phone">
+            <div class="phone-top"></div>
+            <div class="phone-copy">
+              <span id="previewSong">Song</span>
+              <strong id="previewHook">Hook appears here.</strong>
+              <p id="previewBridge">Meaning bridge appears here.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="workflow" class="band">
+        <div class="section-heading">
+          <p class="eyebrow">Production Workflow</p>
+          <h3>업로드까지 제작 단계</h3>
+        </div>
+        <div class="workflow" id="workflowList"></div>
+      </section>
+
+      <section id="script" class="band split">
+        <div class="panel">
+          <div class="section-heading">
+            <p class="eyebrow">Script Builder</p>
+            <h3>45초 영어 스크립트</h3>
+          </div>
+          <div class="script-editor" id="scriptEditor"></div>
+        </div>
+        <div class="script-output panel">
+          <div class="section-heading compact">
+            <p class="eyebrow">Final Copy</p>
+            <h3>릴스 자막 초안</h3>
+          </div>
+          <pre id="scriptOutput"></pre>
+        </div>
+      </section>
+
+      <section id="sources" class="band split">
+        <div class="panel">
+          <div class="section-heading">
+            <p class="eyebrow">Sources</p>
+            <h3>출처와 가사 번역</h3>
+          </div>
+          <label>
+            Source links
+            <textarea data-field="sourceLinks" placeholder="One source per line"></textarea>
+          </label>
+          <label>
+            Lyric translation
+            <textarea data-field="lyricTranslation"></textarea>
+          </label>
+        </div>
+        <div class="panel">
+          <div class="section-heading">
+            <p class="eyebrow">Caption</p>
+            <h3>업로드 문구</h3>
+          </div>
+          <label>
+            Caption
+            <textarea data-field="caption"></textarea>
+          </label>
+          <label>
+            Hashtags
+            <textarea data-field="hashtags"></textarea>
+          </label>
+        </div>
+      </section>
+
+      <section id="package" class="band split">
+        <div class="panel">
+          <div class="section-heading">
+            <p class="eyebrow">Reference Stack</p>
+            <h3>도구별 역할</h3>
+          </div>
+          <div class="tools-grid" id="toolsGrid"></div>
+        </div>
+        <div class="panel package-panel">
+          <div class="section-heading compact">
+            <p class="eyebrow">Structured Export</p>
+            <h3>OpenCut / Remotion 준비 JSON</h3>
+          </div>
+          <pre id="packageOutput"></pre>
+        </div>
+      </section>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>
