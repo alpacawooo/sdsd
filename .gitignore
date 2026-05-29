@@ -1,0 +1,20 @@
+# External reference repositories are local research material only.
+github_references/
+
+# Rendered video outputs can become large quickly.
+reel_template/exports/
+*.mp4
+*.mov
+*.m4v
+
+# Local machine noise.
+.DS_Store
+**/.DS_Store
+
+# Dependency folders and build artifacts.
+node_modules/
+dist/
+build/
+.cache/
+__pycache__/
+*.pyc
