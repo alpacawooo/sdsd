@@ -1,0 +1,41 @@
+{
+  "input": "/Users/woojinyoung/Library/Mobile Documents/com~apple~CloudDocs/한로로 입춘.MP4",
+  "output": "exports/hanroro_ibchun_context_reel.mp4",
+  "start": 0,
+  "duration": 45,
+  "title": "Ibchun",
+  "artist": "Hanroro",
+  "credit": "curated by @계정명",
+  "sections": [
+    {
+      "start": 0,
+      "end": 4,
+      "kind": "hook",
+      "text": "Before you listen to Hanroro's 'Ibchun,'\nyou need to know the image behind it."
+    },
+    {
+      "start": 4,
+      "end": 13,
+      "kind": "context",
+      "text": "A tiny sprout pushing through hard asphalt.\nThat fragile image is where the song begins."
+    },
+    {
+      "start": 13,
+      "end": 22,
+      "kind": "bridge",
+      "text": "So the spring in this song\nisn't just a warm season.\nIt's proof that something survived."
+    },
+    {
+      "start": 22,
+      "end": 35,
+      "kind": "lyrics",
+      "text": "To me, barely lifting my head,\nit offers the first greeting of spring."
+    },
+    {
+      "start": 35,
+      "end": 45,
+      "kind": "closing",
+      "text": "Knowing that, 'Ibchun' feels less like spring arriving,\nand more like someone quietly choosing to bloom."
+    }
+  ]
+}
